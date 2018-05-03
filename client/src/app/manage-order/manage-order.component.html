@@ -1,0 +1,69 @@
+<div class="card-space">
+  <h2>All Orders</h2>
+  <p>You have {{ ordersCount }} orders to manage</p>
+</div>
+
+<button id="counter" type="button" class="btn btn-success">
+    Completed <span class="badge badge-light">{{ completedCount }}</span>
+</button>
+
+<button id="counter" type="button" class="btn btn-danger">
+    Pending <span class="badge badge-light">{{ pendingCount }}</span>
+</button>
+
+<div *ngFor="let order of orders" class="card card-space">
+  <div class="row">
+    <div class="col-md-6">
+        <div class="card-body">
+            <div class="float-right">
+              {{ order.datePlaced | date }}
+            </div>
+            <div class="detail">
+              <p>Name: {{ order.fname }} {{ order.lname }}</p>
+            </div>
+            <div class="detail">
+              <p>Address: {{ order.address1 }}, {{ order.address2 }}</p>
+            </div>
+            <div class="detail">
+              <p>State: {{ order.state }} , {{ order.country }}</p>
+            </div>
+            <div class="detail">
+              <p>Zip Code: {{ order.zip }}</p>
+            </div>
+
+            <br>
+            <div *ngIf="order.completed == 'false'">
+              <button class="btn btn-success"
+              (click)="dispatchOrder(order)"
+              > Dispatch Order
+              </button>
+            </div>
+            <div class="alert alert-secondary" role="alert" *ngIf="order.completed != 'false'">
+                Order Completed
+            </div>
+            
+          </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li *ngFor="let item of order.cart" class="list-group-item">
+                  {{ item.quantity }} x {{ item.title }}
+                  <div class="float-right">
+                    {{ item.quantity * item.price | currency:'USD':true }}
+                  </div>
+                </li>
+                <li class="list-group-item font-weight-bold">
+                  Total
+                  <div class="float-right">
+                    {{ cartPrice(order.cart) | currency:'USD':true }}
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+  

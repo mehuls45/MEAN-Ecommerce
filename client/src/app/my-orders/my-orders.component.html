@@ -1,0 +1,57 @@
+<div class="card-space">
+  <h4>Your Orders</h4>
+</div>
+<div *ngFor="let order of orders">
+  <div *ngIf="email == order.email" class="card card-space">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card-body">
+          <div class="float-right">
+            {{ order.datePlaced | date }}
+          </div>
+          <div class="detail">
+            <p>Name: {{ order.fname }} {{ order.lname }}</p>
+          </div>
+          <div class="detail">
+            <p>Address: {{ order.address1 }}, {{ order.address2 }}</p>
+          </div>
+          <div class="detail">
+            <p>State: {{ order.state }} , {{ order.country }}</p>
+          </div>
+          <div class="detail">
+            <p>Zip Code: {{ order.zip }}</p>
+          </div>
+
+          <br>
+          <div class="alert alert-success" role="alert" *ngIf="order.completed == 'false'">
+              Order Pending
+            </div>
+          <div class="alert alert-secondary" role="alert" *ngIf="order.completed != 'false'">
+            Order Completed
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let item of order.cart" class="list-group-item">
+                {{ item.quantity }} x {{ item.title }}
+                <div class="float-right">
+                  {{ item.quantity * item.price | currency:'USD':true }}
+                </div>
+              </li>
+              <li class="list-group-item font-weight-bold">
+                Total
+                <div class="float-right">
+                  {{ cartPrice(order.cart) | currency:'USD':true }}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

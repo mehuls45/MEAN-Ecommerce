@@ -1,0 +1,34 @@
+#create-btn {
+    margin-top: 15px;
+}
+
+.card img {
+    height:180px !important;
+}
+
+.card {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#circle-btn {
+    border: none;
+    border-radius: 50%;
+    float: right;
+}
+
+#detail-btn {
+    margin-left: 24px;
+}
+
+.badge {
+    float: right;
+}
+
+.card-price{
+    float: left;
+}
+
+#discription {
+    height: 50px;
+}

@@ -1,0 +1,35 @@
+<h4>You have {{ productCount }} products in your inventory</h4>
+<p>
+    <input class="form-control search-box" type="text" [(ngModel)]="term" placeholder="Search...">
+</p>
+<br>
+<table class="table">
+  <tr>
+    <th>Product Name</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th>Stock</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let p of product | filter:term">
+    <th>{{ p.title }}</th>
+    <td>{{ p.category }}</td>
+    <td>{{ p.price | currency:'USD':true }}</td>
+    <td>{{ p.stock }}</td>
+    <td>
+      <button
+        class="btn btn-sm btn-danger" 
+        (click)="deleteProduct(p)">
+        Delete
+      </button>
+    </td>
+    <td>
+      <button
+        class="btn btn-sm btn-info" 
+        (click)="updateProduct(p)">
+        Update
+      </button> 
+    </td>
+  </tr>
+</table>

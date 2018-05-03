@@ -1,0 +1,46 @@
+.card {
+    margin: 15px 0px;
+}
+
+.card img {
+    height:180px !important;
+}
+
+.search-box {
+    width: 400px;
+    margin: 10px;
+}
+
+#circle-btn {
+    border: none;
+    border-radius: 50%;
+    float: right;
+}
+
+#detail-btn {
+    margin-left: 24px;
+}
+
+.badge {
+    float: right;
+}
+
+.card-price{
+    float: left;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #c1d62e;
+    border-color: #c1d62e;
+}
+
+
+.sticky-top {
+    top: 80px;
+}

@@ -1,0 +1,52 @@
+<div class="row">
+            <div class="col-md-2">
+                <div class="sticky-top">
+                        <div class="list-group">
+                                <button
+                                (click)="setItem('')"
+                                class="list-group-item list-group-item-action"
+                                [class.active]="!term" 
+                                routerLink="/product"
+                                >All Categories</button>
+                            
+                                <button  *ngFor="let c of categories" 
+                                (click)="setItem(c.categoryName)" 
+                                [class.active]="c.categoryName === term"
+                                class="list-group-item list-group-item-action">{{ c.categoryName }}</button>                    
+                        </div>
+                </div>
+                    
+            </div>
+    
+    <div class="col-md-10">
+            <div class="container">
+                    <p>
+                        <input class="form-control search-box" type="text" [(ngModel)]="term" placeholder="Search...">
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-md-4" *ngFor="let p of products| filter:term">
+                            <div class="card">
+                                <img src="../../assets/images/{{ p.imageurl }}" class="card-img-top">
+                                <div class="card-body">
+                                    <span class="badge badge-warning" *ngIf="p.stock < 15">Low Stock</span>
+                                    <h5 class="card-title">{{ p.title }}</h5>
+                                    <p class="card-text card-price">{{ p.price | currency:'USD':true }}</p>
+                                    <button (click)="addToWishlist(p)" id="circle-btn" class="btn btn-info btn-sm">
+                                        ❤
+                                    </button>
+                                </div>
+                                <div class="card-footer">
+                                    <button id="detail-btn" (click)="seeDetails(p._id)" class="btn btn-secondary btn-sm">
+                                        See Details
+                                    </button>
+                                    <button (click)="addToCart(p)" class="btn btn-secondary btn-sm">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.card {
+    margin-bottom: 10px;
+}
+
+.card img {
+    height:180px !important;
+}
+
+#remove-btn {
+    float: right;
+}

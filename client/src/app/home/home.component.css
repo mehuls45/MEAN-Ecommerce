@@ -1,0 +1,34 @@
+.carousel-item img {
+    height: 500px !important;
+}
+
+.card img {
+    height:180px !important;
+}
+
+.card {
+    width: 240px;
+}
+
+.heading {
+    margin: 25px 0;
+}
+
+.carousel-caption h1 {
+    float: top;
+    color: #28a745;
+    text-shadow: 4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000, 3px 3px #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.carousel-caption h2 {
+    color: yellow;
+    text-shadow: 4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000, 3px 3px #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
+    font-size: 100px;
+    font-weight: 900;
+}
+
+.best-sellers {
+    margin-bottom: 50px;
+}

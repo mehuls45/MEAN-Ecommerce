@@ -1,0 +1,7 @@
+.navbar-light .navbar-brand {
+    color: #c1d62e;
+}
+
+.dropdown-toggle, #logout {
+    cursor: pointer;
+}

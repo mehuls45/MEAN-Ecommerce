@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-6">
+
+    <div *ngIf="success" class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
+    <div *ngIf="success != null && !success" class="alert alert-danger" role="alert">
+      {{ message }}
+    </div>
+
+    <form class="form" #f="ngForm">
+
+      <label for="fname">First Name</label>
+      <input #fname="ngModel" ngModel type="text" name="fname" class="form-control" required>
+
+      <label for="lname">Last Name</label>
+      <input #lname="ngModel" ngModel type="text" name="lname" class="form-control" required>
+
+      <label for="email">Email</label>
+      <input #email="ngModel" ngModel type="email" name="email" class="form-control" required>
+
+      <label for="password">Password</label>
+      <input #password="ngModel" ngModel type="password" name="password" class="form-control" required>
+
+      <label for="contact">Contact</label>
+      <input #contact="ngModel" ngModel type="number" name="contact" class="form-control" required>
+
+      <label for="country">Country</label>
+      <input #country="ngModel" ngModel type="text" class="form-control" name="country" required>
+
+      <label for="state">State</label>
+      <input #state="ngModel" ngModel type="text" class="form-control" name="state" required>
+
+      <label for="zip">Zip Code</label>
+      <input #zip="ngModel" ngModel type="text" class="form-control" name="zip" required>
+
+      <button id="create-btn" [disabled]="!f.valid" class="btn btn-success" (click)="register(f)" type="submit"> Create Account</button>
+
+    </form>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>

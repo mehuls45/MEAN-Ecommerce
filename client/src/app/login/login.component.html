@@ -1,0 +1,24 @@
+<div *ngIf="logInMessage && customLoginClass" [ngClass]="customLoginClass" role="alert">
+  {{ logInMessage }}
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <form class="form" #f="ngForm">
+
+      <label for="email">Email</label>
+      <input #email="ngModel" ngModel type="text" name="email" class="form-control" required>
+
+      <label for="password">Password</label>
+      <input #password="ngModel" ngModel type="password" name="password" class="form-control" required>
+
+      <button id="sign-in-btn" class="btn btn-success" (click)="login(f)" type="submit"> Sign in</button>
+
+      <a class="btn btn-primary" routerLink="/register">Create Account</a>
+
+    </form>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
