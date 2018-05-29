@@ -29,10 +29,17 @@ export class ProductComponent {
         this.products = product;
         this.getCategories();
       });
+
+      this.route.params.subscribe( data => {
+        this.term = data['id'];
+        if(this.term == 'all') 
+          this.term = '';
+      });
     }
 
     setItem(category) {
       this.term = category;
+      this.router.navigate(['product',this.term]);
     }
 
     getCategories() {

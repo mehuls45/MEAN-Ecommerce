@@ -74,7 +74,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
         component: HomeComponent
       },
       {
-        path: 'product',
+        path: 'product/:id',
         component: ProductComponent
       },
       {
